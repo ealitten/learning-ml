@@ -18,7 +18,7 @@ Our team is:
 
 ## **Project Description**
 
-We defined our initial project as follows:
+We defined our initial project as:
 
 ```
 Making predictions using machine learning
@@ -26,7 +26,7 @@ Making predictions using machine learning
 
 ## **MVP**
 
-We defined our initial MVP as follows:
+We defined our initial MVP as:
 
 ```
 Using Titanic survivor data, predict a better than chance survival outcome of passengers.
