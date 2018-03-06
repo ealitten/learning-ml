@@ -14,7 +14,13 @@ Our team is:
  - [Ed Goold](https://github.com/Gleoman)
  - [Dom Vernon](https://github.com/domvernon)
 
-## **Installation/Setup**
+## **Installation/Requirements **
+
+- tensorflow
+- pandas
+
+All requirements can be installed by installing the pipenv library (`pip install pipenv`) and then running `pipenv install` in the project directory.
+
 
 ## **Project Description**
 
