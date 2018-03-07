@@ -14,7 +14,7 @@ def load_data():
   return (train_f, train_l), (test_f, test_l)
 
 def input_fn_train(features, labels, batch_size):
-  # Convert the inputs to a Dataset.
+  # Input function for training the model
   dataset = tf.data.Dataset.from_tensor_slices((dict(features), labels))
 
   # Shuffle, repeat, and batch the examples.
@@ -24,6 +24,7 @@ def input_fn_train(features, labels, batch_size):
   return dataset
 
 def input_fn_eval(features, labels, batch_size):
+  # Input function for evaluating the model
   features=dict(features)
   if labels is None:
     # No labels, use only features.
