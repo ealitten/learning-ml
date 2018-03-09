@@ -22,12 +22,12 @@ def main(argv):
     n_classes = 2)
 
   classifier.train(
-    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 50),
-    steps=3000
+    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 40000),
+    steps=10000
   )
 
   eval_results = classifier.evaluate(
-    input_fn = lambda: pokemon_data.input_fn_eval(test_f, test_l, 50)
+    input_fn = lambda: pokemon_data.input_fn_eval(test_f, test_l, 40000)
   )
 
   print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_results))

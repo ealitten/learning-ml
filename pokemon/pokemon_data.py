@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 def load_data():
   # Loads sanitised data
   data = pd.read_csv("./pokemon-challenge/full_pokemon_data.csv")
-  features = data[["First_pokemon", "Second_pokemon", ]]
+  features = data[["First_pokemon", "Second_pokemon", "p1_Type 1", "p2_Type 1"]]
   labels = data[["Winner"]]
   train_f, test_f, train_l, test_l = train_test_split(features, labels, test_size=0.2)
 
