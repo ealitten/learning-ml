@@ -1,12 +1,12 @@
 
-import pandas as pd
-
 ## Step 1- Data Munging
+
+import pandas as pd
 
 # Storing ‘combats.csv(win/lose data)’ file data into a dataframe variable data
 data = pd.read_csv('./pokemon-challenge/combats.csv')
 
-# To replace winner/loser pokemon id with 0 and 1, loop over data rows-
+# To replace winner/loser pokemon id with 0 and 1, loop over data rows
 for index, row in data.iterrows():
  if row['First_pokemon'] == row['Winner']:
    row['Winner'] = 0
