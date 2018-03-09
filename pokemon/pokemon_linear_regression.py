@@ -23,7 +23,7 @@ def main(argv):
 
   classifier.train(
     input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 50),
-    steps=20000
+    steps=3000
   )
 
   eval_results = classifier.evaluate(
