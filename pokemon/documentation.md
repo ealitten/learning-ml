@@ -10,7 +10,7 @@ data = pd.read_csv('./pokemon-challenge/combats.csv')
 for index, row in data.iterrows():
  if row['First_pokemon'] == row['Winner']:
    row['Winner'] = 0
- else:
+ else
    row['Winner'] = 1
 
 # Writing updated data( where Winner=0,Loser=1) to 'combats_relative_winner.csv'
