@@ -3,6 +3,24 @@ import pokemon_data
 
 def main(argv):
 
+  feature_spec = { 'First_pokemon' : tf.FixedLenFeature(50, tf.string),
+                   'Second_pokemon' : tf.FixedLenFeature(50, tf.string),
+                    'p1_Type 1' : tf.FixedLenFeature(50, tf.string),
+                    'p2_Type 1': tf.FixedLenFeature(50, tf.string)
+  }
+
+
+
+  def serving_input_receiver_fn():
+    # tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec)
+    serialised_tf_example = tf.placeholder(dtype = tf.string,
+                                           shape =  50,
+                                           name = 'input_example_tensor')
+
+    receiver_tensors = { 'examples' : serialised_tf_example }
+    features = tf.parse_example(serialised_tf_example, feature_spec)
+    return tf.estimator.export.ServingInputReceiver(features, receiver_tensors)
+
   def build_model_columns():
     # Builds a set of feature columns for the model to use
     pokemon_1 = tf.feature_column.numeric_column('First_pokemon')
@@ -22,8 +40,8 @@ def main(argv):
     n_classes = 2)
 
   classifier.train(
-    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 40000),
-    steps=10000
+    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 50),
+    steps=2000
   )
 
   eval_results = classifier.evaluate(
@@ -31,6 +49,8 @@ def main(argv):
   )
 
   print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_results))
+
+  classifier.export_savedmodel('./', serving_input_receiver_fn)
 
 if __name__ == '__main__':
   tf.logging.set_verbosity(tf.logging.INFO)
