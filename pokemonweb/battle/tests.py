@@ -19,4 +19,4 @@ class CapybaraTestCase(unittest.TestCase):
 
     def tearDown(self):
         capybara.reset_sessions()
-=
+
