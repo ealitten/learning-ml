@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'battle'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'pokemonweb.urls'
 
 TEMPLATES = [
+    
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
