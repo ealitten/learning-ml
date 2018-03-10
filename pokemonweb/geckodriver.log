@@ -140,3 +140,43 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 1520698793295	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:52246/battle/"
 1520698793298	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:blank"
 1520698793301	Marionette	DEBUG	Received DOM event "pageshow" for "about:blank"
+1520707691608	geckodriver	INFO	geckodriver 0.19.1
+1520707691683	geckodriver	INFO	Listening on 127.0.0.1:53138
+1520707692701	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/07/rbbbs3296qjb1ky976dlhjp80000gn/T/rust_mozprofile.wMKbMkEIXdMf"
+1520707693474	Marionette	INFO	Enabled via --marionette
+2018-03-10 18:48:14.367 plugin-container[29734:195645] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a47, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: resource://gre/modules/XPCOMUtils.jsm, line 266: TypeError: Cc[aContract] is undefined
+1520707695067	Marionette	INFO	Listening on port 53145
+1520707695110	Marionette	WARN	TLS certificate errors will be ignored for this session
+1520707695180	Marionette	DEBUG	Register listener.js for window 2147483649
+1520707695214	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1520707695259	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1520707695261	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1520707695282	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:53134/battle"
+1520707695307	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:53134/battle"
+1520707697445	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:53134/battle"
+1520707697448	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:53134/battle"
+1520707697448	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:53134/battle"
+1520707697451	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:blank"
+1520707697454	Marionette	DEBUG	Received DOM event "pageshow" for "about:blank"
+1520707735729	geckodriver	INFO	geckodriver 0.19.1
+1520707735798	geckodriver	INFO	Listening on 127.0.0.1:53365
+1520707736819	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/07/rbbbs3296qjb1ky976dlhjp80000gn/T/rust_mozprofile.kQDyuHPqLdLE"
+1520707737418	Marionette	INFO	Enabled via --marionette
+2018-03-10 18:48:58.226 plugin-container[29862:196717] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7607, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: resource://gre/modules/XPCOMUtils.jsm, line 266: TypeError: Cc[aContract] is undefined
+1520707738882	Marionette	INFO	Listening on port 53373
+1520707738911	Marionette	WARN	TLS certificate errors will be ignored for this session
+1520707738976	Marionette	DEBUG	Register listener.js for window 2147483649
+1520707739004	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1520707739086	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1520707739086	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1520707739227	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://127.0.0.1:53361/pokemon/index/"
+1520707739231	Marionette	DEBUG	Received DOM event "pageshow" for "http://127.0.0.1:53361/pokemon/index/"
+1520707739373	Marionette	DEBUG	Received DOM event "beforeunload" for "http://127.0.0.1:53361/pokemon/index/"
+1520707739377	Marionette	DEBUG	Received DOM event "pagehide" for "http://127.0.0.1:53361/pokemon/index/"
+1520707739377	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:53361/pokemon/index/"
+1520707739381	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:blank"
+1520707739384	Marionette	DEBUG	Received DOM event "pageshow" for "about:blank"

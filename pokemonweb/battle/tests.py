@@ -14,8 +14,8 @@ class CapybaraTestCase(unittest.TestCase):
         self.page = capybara.dsl.page
 
     def test_battle_index_page_works(self):
-        self.page.visit('battle')
-        assert self.page.has_text('Hello, world')
+        self.page.visit('pokemon/index')
+        assert self.page.has_text('Welcome')
 
     def tearDown(self):
         capybara.reset_sessions()
