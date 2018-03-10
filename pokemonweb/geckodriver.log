@@ -180,3 +180,61 @@ JavaScript error: resource://gre/modules/XPCOMUtils.jsm, line 266: TypeError: Cc
 1520707739377	Marionette	DEBUG	Received DOM event "unload" for "http://127.0.0.1:53361/pokemon/index/"
 1520707739381	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:blank"
 1520707739384	Marionette	DEBUG	Received DOM event "pageshow" for "about:blank"
+1520712543464	geckodriver	INFO	geckodriver 0.19.1
+1520712543580	geckodriver	INFO	Listening on 127.0.0.1:54256
+1520712544626	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/xr/hqb093mn4_qcgd25bg24dy280000gn/T/rust_mozprofile.cjvdE1ydNzMT"
+1520712545389	Marionette	INFO	Enabled via --marionette
+2018-03-10 20:09:08.454 plugin-container[14659:1182059] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8743, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712548990	Marionette	INFO	Listening on port 54263
+1520712549101	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-03-10 20:09:09.988 plugin-container[14662:1182245] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x773f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1520712749716	geckodriver	INFO	geckodriver 0.19.1
+1520712749817	geckodriver	INFO	Listening on 127.0.0.1:54394
+1520712750843	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/xr/hqb093mn4_qcgd25bg24dy280000gn/T/rust_mozprofile.hBxb4bQSj4qI"
+1520712751584	Marionette	INFO	Enabled via --marionette
+2018-03-10 20:12:32.838 plugin-container[14708:1186373] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712753439	Marionette	INFO	Listening on port 54401
+1520712753489	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-03-10 20:12:34.545 plugin-container[14709:1186456] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7e43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 14709, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1520712797874	geckodriver	INFO	geckodriver 0.19.1
+1520712797974	geckodriver	INFO	Listening on 127.0.0.1:54486
+1520712798999	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/xr/hqb093mn4_qcgd25bg24dy280000gn/T/rust_mozprofile.8pfHeSHxc5fq"
+1520712799743	Marionette	INFO	Enabled via --marionette
+2018-03-10 20:13:21.033 plugin-container[14729:1187755] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7c43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712801620	Marionette	INFO	Listening on port 54493
+1520712801662	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-03-10 20:13:22.519 plugin-container[14730:1187841] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 14730, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1520712820324	geckodriver	INFO	geckodriver 0.19.1
+1520712820427	geckodriver	INFO	Listening on 127.0.0.1:54587
+1520712821458	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/xr/hqb093mn4_qcgd25bg24dy280000gn/T/rust_mozprofile.xy9bNzuWy2AL"
+1520712822127	Marionette	INFO	Enabled via --marionette
+2018-03-10 20:13:43.442 plugin-container[14745:1188854] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8243, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712823994	Marionette	INFO	Listening on port 54594
+1520712824090	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-03-10 20:13:44.952 plugin-container[14746:1188938] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f07, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712988508	geckodriver	INFO	geckodriver 0.19.1
+1520712988612	geckodriver	INFO	Listening on 127.0.0.1:54763
+1520712989634	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/xr/hqb093mn4_qcgd25bg24dy280000gn/T/rust_mozprofile.pDqPY1QghEo4"
+1520712990336	Marionette	INFO	Enabled via --marionette
+2018-03-10 20:16:31.609 plugin-container[14792:1192924] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7943, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1520712992144	Marionette	INFO	Listening on port 54770
+1520712992217	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-03-10 20:16:33.070 plugin-container[14793:1193004] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7f3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 14793, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
