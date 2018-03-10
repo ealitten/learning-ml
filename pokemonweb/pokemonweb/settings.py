@@ -25,7 +25,9 @@ SECRET_KEY = 'y(b+vt21%q18cq!9r51n@85@jd1=h_q9ecg+24!4b7=4x74zl6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# This setting is required so that our tests can run; even though this is not
+# required when running the server locally.
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '']
 
 
 # Application definition
@@ -122,3 +124,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+_log_level = 'INFO'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': _log_level,
+            'class': 'logging.StreamHandler'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': _log_level,
+            'propagate': True,
+        },
+    },
+}
