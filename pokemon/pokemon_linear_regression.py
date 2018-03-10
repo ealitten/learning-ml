@@ -10,8 +10,8 @@ def main(argv):
     # Builds a set of feature columns for the model to use
     pokemon_1 = tf.feature_column.numeric_column('First_pokemon')
     pokemon_2 = tf.feature_column.numeric_column('Second_pokemon')
-    pokemon_type_1 = tf.feature_column.categorical_column_with_vocabulary_list('pa_Type', pokemon_types )
-    pokemon_type_2 = tf.feature_column.categorical_column_with_vocabulary_list('pb_Type', pokemon_types )
+    pokemon_type_1 = tf.feature_column.categorical_column_with_vocabulary_list('p1_Type1', pokemon_types )
+    pokemon_type_2 = tf.feature_column.categorical_column_with_vocabulary_list('p2_Type1', pokemon_types )
     p1_hp = tf.feature_column.numeric_column("p1_HP")
     p2_hp = tf.feature_column.numeric_column("p2_HP")
     feature_columns = [pokemon_1, pokemon_2, pokemon_type_1, pokemon_type_2, p1_hp, p2_hp]
