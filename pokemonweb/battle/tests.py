@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 
 import capybara
 import capybara.dsl
@@ -19,3 +19,4 @@ class CapybaraTestCase(unittest.TestCase):
 
     def tearDown(self):
         capybara.reset_sessions()
+=
