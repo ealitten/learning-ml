@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 def load_data():
   # Loads sanitised data
   data = pd.read_csv("./pokemon-challenge/full_pokemon_data.csv")
-  features = data[["First_pokemon", "Second_pokemon", "p1_Type 1", "p2_Type 1"]]
+  features = data[["First_pokemon", "Second_pokemon"]]
   labels = data[["Winner"]]
   train_f, test_f, train_l, test_l = train_test_split(features, labels, test_size=0.2)
 
@@ -19,7 +19,7 @@ def input_fn_train(features, labels, batch_size):
   dataset = dataset.shuffle(60000).repeat().batch(batch_size)
 
   # Return the dataset.
-  return dataset
+  return dataset.make_one_shot_iterator().get_next()
 
 def input_fn_eval(features, labels, batch_size):
   # Input function for evaluating the model
@@ -38,4 +38,4 @@ def input_fn_eval(features, labels, batch_size):
   dataset = dataset.batch(batch_size)
 
   # Return the dataset.
-  return dataset
+  return dataset.make_one_shot_iterator().get_next()
