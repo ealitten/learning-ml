@@ -17,5 +17,6 @@ class Pokemon(models.Model):
 
 class Predictions(models.Model):
     uid = models.IntegerField(primary_key=True)
-    First_pokemon = models.CharField(max_length=50)
-    Second_pokemon = models.CharField(max_length=50)
+    First_pokemon = models.PositiveIntegerField(default=0)
+    Second_pokemon = models.PositiveIntegerField(default=0)
+    Winner = models.PositiveIntegerField(default=0)
