@@ -1,34 +1,23 @@
 import tensorflow as tf
-import pokemon_data
+import pandas as pd
+from sklearn.model_selection import train_test_split
 
 def main(argv):
 
-  # feature_spec = { 'First_pokemon' : tf.FixedLenFeature(50, tf.string),
-  #                  'Second_pokemon' : tf.FixedLenFeature(50, tf.string),
-  #                   'p1_Type 1' : tf.FixedLenFeature(50, tf.string),
-  #                   'p2_Type 1': tf.FixedLenFeature(50, tf.string)
-  # }
+  FEATURES = ["First_pokemon", "Second_pokemon"]
+  LABEL = ["Winner"]
 
-  # def serving_input_receiver_fn():
-  #   # tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec)
-  #   serialised_tf_example = tf.placeholder(dtype = tf.string,
-  #                                          shape =  50,
-  #                                          name = 'input_example_tensor')
 
-  #   receiver_tensors = { 'examples' : serialised_tf_example }
-  #   features = tf.parse_example(serialised_tf_example, feature_spec)
-  #   return tf.estimator.export.ServingInputReceiver(features, receiver_tensors)
+  def load_data():
+    """Loads sanitised data"""
+    data = pd.read_csv("./pokemon-challenge/full_pokemon_data.csv")
+    train_data, test_data = train_test_split(data, test_size=0.2)
 
-  def json_serving_input_fn():
-    """Build the serving inputs."""
-    inputs = {}
-    for feat in INPUT_COLUMNS:
-      inputs[feat.name] = tf.placeholder(shape=[None], dtype=feat.dtype)
-      
-    return tf.estimator.export.ServingInputReceiver(inputs, inputs)
+    return train_data, test_data
+
 
   def build_model_columns():
-    # Builds a set of feature columns for the model to use
+    """Builds a set of feature columns for the model to use"""
     pokemon_1 = tf.feature_column.numeric_column('First_pokemon')
     pokemon_2 = tf.feature_column.numeric_column('Second_pokemon')
 
@@ -36,26 +25,51 @@ def main(argv):
 
     return feature_columns
 
+
+  def input_fn(data_set, shuffle, batch_size, num_epochs=None):
+    """Builds input fn which feeds data into model as tensors"""
+    features = data_set[FEATURES]
+    labels = data_set[LABEL]
+    return tf.estimator.inputs.pandas_input_fn(
+        x = features,
+        y = labels,
+        batch_size=batch_size,
+        num_epochs=num_epochs,
+        shuffle=shuffle,
+        num_threads=1)
+
+
+  def json_serving_input_fn():
+    """Builds serving input fn which is used when model is running in cloud"""
+    inputs = {}
+    for feat in INPUT_COLUMNS:
+      inputs[feat.name] = tf.placeholder(shape=[None], dtype=feat.dtype)
+      
+    return tf.estimator.export.ServingInputReceiver(inputs, inputs)
+
+
+  train_data, test_data = load_data()
   INPUT_COLUMNS = build_model_columns()
 
-  (train_f, train_l), (test_f, test_l) = pokemon_data.load_data()
-
-  # Build a Linear classifier which chooses between two classes (survived/died)
+  # Build a Linear classifier which chooses between two classes (p1 win/p2 win)
   classifier = tf.estimator.LinearClassifier(
     feature_columns = INPUT_COLUMNS,
     n_classes = 2)
 
+  # Train the classifier using 80% of the data
   classifier.train(
-    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 50),
+    input_fn=input_fn(data_set=train_data, shuffle=True, batch_size=100, num_epochs=None),
     steps=2000
   )
 
+  # Use the remaining 20% of data to evaluate accuracy
   eval_results = classifier.evaluate(
-    input_fn = lambda: pokemon_data.input_fn_eval(test_f, test_l, 40000)
+    input_fn=input_fn(data_set=test_data, shuffle=False, batch_size=100, num_epochs=1)
   )
 
   print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_results))
 
+  # Export SavedModel for upload to the cloud (Google ML engine)
   classifier.export_savedmodel('./', json_serving_input_fn)
 
 if __name__ == '__main__':
