@@ -6,3 +6,6 @@ def index(request):
 
 def pokemon(request):
     return render(request, 'battle/pokemon.html', {})
+
+def winner(request):
+    return HttpResponse("Bulbasaur wins!")
