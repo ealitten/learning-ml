@@ -5,5 +5,4 @@ def index(request):
     return render(request, 'battle/index.html', {})
 
 def pokemon(request):
-    return HttpResponse('Pokemon page')
-    
+    return render(request, 'battle/pokemon.html', {})
