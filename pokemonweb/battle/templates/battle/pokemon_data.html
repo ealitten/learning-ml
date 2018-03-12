@@ -1,0 +1,18 @@
+<div>
+    <h1>Pokemon Data</h1>
+ </div>
+ <form action="/pokemon_data/" method="post">
+    {% csrf_token %}
+    <select name="pokemon_id">
+        <option value="">---------</option>
+        {% for p in all_pokemon %}
+        <option value="{{ p.uid }}">{{ p.name }}</option>
+        {% endfor %}
+    </select>
+    <p>
+        You have selected {{ selected }}
+    </p>
+    <input type="submit" value="Submit">
+ </form>
+ 
+ 
