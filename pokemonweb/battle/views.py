@@ -12,7 +12,6 @@ def pokemon(request):
 def pokemon_data(request):
     all_pokemon = Pokemon.objects.all()
     selected = request.POST.get('pokemon_id')
-    print(selected)
     data = {'all_pokemon': all_pokemon, 'selected': selected}
     return render(request, 'battle/pokemon_data.html', data)
 
