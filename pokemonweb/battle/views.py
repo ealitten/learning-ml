@@ -10,14 +10,18 @@ def pokemon(request):
     return render(request, 'battle/pokemon.html', {})
 
 def pokemon_data(request):
-    all_pokemon = Pokemon.objects.all()
-    selected = request.POST.get('pokemon_id')
-    data = {'all_pokemon': all_pokemon, 'selected': selected}
+    all_pokemon = Pokemon.objects.all() 
+    selected = request.POST.get('pk1')
+    selected_2 = request.POST.get('pk2')
+    data = {'all_pokemon': all_pokemon, 'selected': selected, 'selected_2': selected_2}
     return render(request, 'battle/pokemon_data.html', data)
 
-def pokemon_data_2(request):
-    pk_id = request.GET.get('uid')
-    nam = Pokemon.objects.filter(uid=pk_id).order_by('name')
-    form = PokemonForm()
-    return render(request, 'battle/pokemon_data.html', {'form': form, 'nam': nam})
-
+def pokemon_details(request):
+    print("Inside pokemon_details")
+    pid = request.GET.get('pid')
+    if pid is None:
+        return ''
+    else:
+        details = Pokemon.objects.get(uid=pid)
+        data = {'details': details}
+        return render(request, 'battle/pokemon_details.html', data)
