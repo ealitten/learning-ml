@@ -1,54 +1,72 @@
-<div>
-    <h1>Your Pokemon Battle</h1>
- </div>
- 
- <form action="/pokemon_data/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
-    {% csrf_token %}
-    <select name="pk1" id="pk1">
-        <option value="">---------</option>
-        {% for p in all_pokemon %}
-        <option value="{{ p.uid }}">{{ p.name }}</option>
-        {% endfor %}
-    </select>
-    <div id="pk1_details"></div>
-    <br>
-    <br>
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokemon Battle !!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <select name="pk2" id="pk2">
-            <option value="">---------</option>
-            {% for p in all_pokemon %}
-            <option value="{{ p.uid }}">{{ p.name }}</option>
-            {% endfor %}
-    </select>
-    <div id="pk2_details"></div>
-    <p>
-        You have selected {{ selected }}
-        You have selected {{ selected_2 }}
-    </p>
-    <input type="submit" value="Fight">
- </form>
 
- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
- <script>
-   $("#pk1").change(onPidChange);
-   $("#pk2").change(onPidChange);
-
-   function onPidChange() {
-
-        var url = $("#fightForm").attr("p-details-url");  // get the url of the `pokemon_details` view
-        var selectObj = $(this);
-        var pid = $(this).val();  // get the selected pokemon ID from the HTML input
-
-        $.ajax({                       // initialize an AJAX request
-            url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
-            data: {
-            'pid': pid       // add the country id to the GET parameters
-        },
-        success: function (data) {   // `data` is the return of the `lpokemon_details` view function
-        var divId = "#" + selectObj.attr('name') + "_details";
-        // alert('got ' + divId);
-        $(divId).html(data);  // replace the contents of the with the data that came from the server
-       }
-     })
-   };
- </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'battle/pokemon.css' %}" />
+</head>
+    <body>
+    <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
+         <form action="/pokemon_data/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
+            {% csrf_token %}
+            
+            
+            <br>
+            <br>
+            
+            
+            <table>
+                <th><select name="pk1" id="pk1">
+                        <option value="">---------</option>
+                        {% for p in all_pokemon %}
+                        <option value="{{ p.uid }}">{{ p.name }}</option>
+                        {% endfor %}
+                    </select></th>
+                <td><div id="pk1_details"></div></td>
+                <th><select name="pk2" id="pk2">
+                        <option value="">---------</option>
+                        {% for p in all_pokemon %}
+                        <option value="{{ p.uid }}">{{ p.name }}</option>
+                        {% endfor %}
+                </select></th>
+                <td><div id="pk2_details"></div></td>
+            </table>
+            
+            <p>
+                You have selected {{ selected }}
+                You have selected {{ selected_2 }}
+            </p>
+            <input type="submit" value="Fight">
+         </form>
+        
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+         <script>
+           $("#pk1").change(onPidChange);
+           $("#pk2").change(onPidChange);
+        
+           function onPidChange() {
+        
+                var url = $("#fightForm").attr("p-details-url");  // get the url of the `pokemon_details` view
+                var selectObj = $(this);
+                var pid = $(this).val();  // get the selected pokemon ID from the HTML input
+        
+                $.ajax({                       // initialize an AJAX request
+                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
+                    data: {
+                    'pid': pid       // add the country id to the GET parameters
+                },
+                success: function (data) {   // `data` is the return of the `lpokemon_details` view function
+                var divId = "#" + selectObj.attr('name') + "_details";
+                // alert('got ' + divId);
+                $(divId).html(data);  // replace the contents of the with the data that came from the server
+               }
+             })
+           };
+         </script>
+    </body>
+    </html>
