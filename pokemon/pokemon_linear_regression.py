@@ -28,8 +28,8 @@ def main(argv):
     n_classes = 2)
 
   classifier.train(
-    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 500),
-    steps=10000
+    input_fn = lambda: pokemon_data.input_fn_train(train_f, train_l, 50),
+    steps=2000
   )
 
   eval_results = classifier.evaluate(
@@ -37,6 +37,8 @@ def main(argv):
   )
 
   print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_results))
+
+  classifier.export_savedmodel('./', serving_input_receiver_fn)
 
 if __name__ == '__main__':
   tf.logging.set_verbosity(tf.logging.INFO)
