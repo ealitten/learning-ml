@@ -14,3 +14,9 @@ class Pokemon(models.Model):
     generation = models.PositiveIntegerField(default=0)
     lengendary = models.BooleanField(default=False)
 
+
+class Predictions(models.Model):
+    uid = models.IntegerField(primary_key=True)
+    First_pokemon = models.PositiveIntegerField(default=0)
+    Second_pokemon = models.PositiveIntegerField(default=0)
+    Winner = models.PositiveIntegerField(default=0)
