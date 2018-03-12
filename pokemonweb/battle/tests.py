@@ -30,13 +30,15 @@ class CapybaraTestCase(unittest.TestCase):
         
         assert self.page.has_content('Charmander')
 
+ view-pokemon-data-from-database
     def test_have_a_battle(self):
        self.page.visit('index')
        self.page.click_link('Your Pokemon Battle')
        self.page.select("Bulbasaur", field="pk1")
        self.page.select("Wartortle", field="pk2")
        self.page.click_button("Fight")
-       assert self.page.has_content("Bulbasaur wins!")
+       assert self.page.has_content("Bulbasaur wins!"
+    
 
     def tearDown(self):
-        capybara.reset_sessions()
+       capybara.reset_sessions()
