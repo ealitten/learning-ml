@@ -55,7 +55,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'pokemonweb.urls'
 
 TEMPLATES = [
-    
+
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -146,3 +146,7 @@ LOGGING = {
         },
     },
 }
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
