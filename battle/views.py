@@ -42,7 +42,7 @@ def fight(request):
     "p2_Defense": p2.defense,"p2_SpAtk": p2.sp_attack,"p2_SpDef": p2.sp_defense,"p2_Speed": p2.speed}]
     winner = json_request(instances)
     probabilities = winner[0]["probabilities"]
-    result = {"probabilities": "some text"}
+    result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name}
     return render(request,'battle/winner.html', result)
    
 def json_request(instances):
