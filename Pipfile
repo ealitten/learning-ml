@@ -18,6 +18,8 @@ google-auth = "*"
 
 [dev-packages]
 
+capybara-py = "*"
+selenium = "*"
 
 
 [requires]
