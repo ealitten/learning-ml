@@ -21,16 +21,15 @@ version = 'v10'
 
 service_acc_info = {}
 
-print(os.environ.get("private_key_id"))
-print(os.environ.get("private_key"))
-print(os.environ.get("client_email"))
-print(os.environ.get("client_id"))
-print(os.environ.get("client_x509_cert_url"))
+private_key = os.environ.get("private_key")
+raw_private_key = "%r"%private_key
+
+print(raw_private_key)
 
 service_acc_info["type"] = "service_account"
 service_acc_info["project_id"] = "elegant-beach-197514"
 service_acc_info["private_key_id"] = os.environ.get("private_key_id")
-service_acc_info["private_key"] = os.environ.get("private_key")
+service_acc_info["private_key"] = raw_private_key
 service_acc_info["client_email"] = os.environ.get("client_email")
 service_acc_info["client_id"] = os.environ.get("client_id")
 service_acc_info["auth_uri"] = "https://accounts.google.com/o/oauth2/auth"
