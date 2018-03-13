@@ -6,20 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokemon Battle !!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <link rel="stylesheet" type="text/css" href="{% static 'battle/pokemon.css' %}" />
 </head>
     <body>
     <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
          <form action="/fight/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
             {% csrf_token %}
-
-
             <br>
             <br>
-
-
             <table>
                 <th><select name="pk1" id="pk1">
                         <option value="">---------</option>
@@ -36,7 +30,6 @@
                 </select></th>
                 <td><div id="pk2_details"></div></td>
             </table>
-
             <p>
                 You have selected {{ selected }}
                 You have selected {{ selected_2 }}
@@ -72,4 +65,5 @@
            };
          </script>
     </body>
+
     </html>

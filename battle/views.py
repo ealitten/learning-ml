@@ -3,6 +3,12 @@ from django.http import HttpResponse
 from .models import Pokemon
 from .forms import PokemonForm
 
+import os
+import json
+
+import googleapiclient.discovery
+from google.oauth2 import service_account
+
 def index(request):
     return render(request, 'battle/index.html', {})
 
@@ -26,13 +32,37 @@ def pokemon_details(request):
         return render(request, 'battle/pokemon_details.html', data)
 
 def fight(request):
-    p1 = request.POST.get('pk1_id')
-    p2 = request.POST.get('pk2_id')
-    details_1 = Pokemon.objects.get(uid=pokemon_1)
-    details_2 = Pokemon.objects.get(uid=pokemon_2)
-    instances = [{"First_pokemon": p1,"Second_pokemon": p2,"p1_Type1":
-    " Fighting","p2_Type1": " Water","p1_HP": 65,"p2_HP": 170,"p1_Attack": 125,
-    "p1_Defense": 60,"p1_SpAtk": 95,"p1_SpDef": 60,"p1_Speed": 105,"p2_Attack": 90,
-    "p2_Defense": 45,"p2_SpAtk": 90,"p2_SpDef": 45,"p2_Speed": 60}]
-    print(details_1)
-    print(details_2)
+    pokemon_1 = request.POST.get('pk1_id')
+    pokemon_2 = request.POST.get('pk2_id')
+    p1 = Pokemon.objects.get(uid=pokemon_1)
+    p2 = Pokemon.objects.get(uid=pokemon_2)
+    instances = [{"First_pokemon": p1.uid,"Second_pokemon": p2.uid,"p1_Type1":
+    p1.type_1,"p2_Type1": p2.type_1,"p1_HP": p1.hp,"p2_HP": p2.hp,"p1_Attack": p1.attack,
+    "p1_Defense": p1.defense,"p1_SpAtk": p1.sp_attack,"p1_SpDef": p1.sp_defense,"p1_Speed": p1.speed,"p2_Attack": p2.attack,
+    "p2_Defense": p2.defense,"p2_SpAtk": p2.sp_attack,"p2_SpDef": p2.sp_defense,"p2_Speed": p2.speed}]
+    winner = json_request(instances)
+    probabilities = winner[0]["probabilities"]
+    result = {"probabilities": "some text"}
+    return render(request,'battle/winner.html', result)
+   
+def json_request(instances):
+    project = 'elegant-beach-197514'
+    model = 'pokemon_predictor'
+    instances = instances
+    version = 'v10' 
+    credentials = service_account.Credentials.from_service_account_file("/Users/reenasharma/makers/we-predicted-that/battle/authentication.json")
+    service = googleapiclient.discovery.build("ml", "v1", credentials=credentials)
+    name = "projects/{}/models/{}".format(project, model)
+
+    if version is not None:
+        name += "/versions/{}".format(version)
+
+    response = service.projects().predict(
+        name=name,
+        body={"instances": instances}
+    ).execute()
+
+    if "error" in response:
+        raise RuntimeError(response["error"])
+
+    return (response["predictions"])
