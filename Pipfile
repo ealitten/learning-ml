@@ -11,6 +11,8 @@ pandas = "*"
 django = "*"
 django-heroku = "*"
 gunicorn = "*"
+google-api-python-client = "*"
+google-auth = "*"
 
 
 [dev-packages]
