@@ -58,9 +58,9 @@
                 $.ajax({                       // initialize an AJAX request
                     url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
                     data: {
-                    'pid': pid       // add the country id to the GET parameters
+                    'pid': pid       // add the pokemon id to the GET parameters
                 },
-                success: function (data) {   // `data` is the return of the `lpokemon_details` view function
+                success: function (data) {   // `data` is the return of the `pokemon_details` view function
                 var divId = "#" + selectObj.attr('name') + "_details";
                 // alert('got ' + divId);
                 $(divId).html(data);  // replace the contents of the with the data that came from the server
