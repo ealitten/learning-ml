@@ -13,6 +13,7 @@ django-heroku = "*"
 gunicorn = "*"
 google-api-python-client = "*"
 google-auth = "*"
+google-auth-httplib2 is installed = "*"
 
 
 [dev-packages]
