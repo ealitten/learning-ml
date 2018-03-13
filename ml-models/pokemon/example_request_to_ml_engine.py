@@ -21,24 +21,20 @@ version = 'v10'
 
 service_acc_info = {}
 
-private_key = os.environ.get("private_key")
-raw_private_key = "%r"%private_key
-
-print(raw_private_key)
-
-service_acc_info["type"] = "service_account"
-service_acc_info["project_id"] = "elegant-beach-197514"
-service_acc_info["private_key_id"] = os.environ.get("private_key_id")
-service_acc_info["private_key"] = raw_private_key
-service_acc_info["client_email"] = os.environ.get("client_email")
-service_acc_info["client_id"] = os.environ.get("client_id")
-service_acc_info["auth_uri"] = "https://accounts.google.com/o/oauth2/auth"
-service_acc_info["token_uri"] = "https://accounts.google.com/o/oauth2/token"
-service_acc_info["auth_provider_x509_cert_url"] = "https://www.googleapis.com/oauth2/v1/certs"
-service_acc_info["client_x509_cert_url"] = os.environ.get("client_x509_cert_url")
+# service_acc_info["type"] = "service_account"
+# service_acc_info["project_id"] = "elegant-beach-197514"
+# service_acc_info["private_key_id"] = os.environ.get("private_key_id")
+service_acc_info["private_key"] = os.environ.get("private_key").sub(r'/\\n/', r'\n')
+service_acc_info["private_key2"] = os.environ.get("private_key").sub(r'/\\n/', '\n')
+service_acc_info["private_key3"] = os.environ.get("private_key").sub('/\\n/', '\n')
+# service_acc_info["client_email"] = os.environ.get("client_email")
+# service_acc_info["client_id"] = os.environ.get("client_id")
+# service_acc_info["auth_uri"] = "https://accounts.google.com/o/oauth2/auth"
+# service_acc_info["token_uri"] = "https://accounts.google.com/o/oauth2/token"
+# service_acc_info["auth_provider_x509_cert_url"] = "https://www.googleapis.com/oauth2/v1/certs"
+# service_acc_info["client_x509_cert_url"] = os.environ.get("client_x509_cert_url")
 
 print(service_acc_info)
-print(json.dumps(service_acc_info))
 
 credentials = service_account.Credentials.from_service_account_info(service_acc_info)
 
