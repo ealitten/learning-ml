@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokemon Battle !!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 
     <link rel="stylesheet" type="text/css" href="{% static 'battle/pokemon.css' %}" />
 </head>
     <body>
     <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
-         <form action="/pokemon_data/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
+         <form action="/fight/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
             {% csrf_token %}
-            
-            
+
+
             <br>
             <br>
-            
-            
+
+
             <table>
                 <th><select name="pk1" id="pk1">
                         <option value="">---------</option>
@@ -36,25 +36,27 @@
                 </select></th>
                 <td><div id="pk2_details"></div></td>
             </table>
-            
+
             <p>
                 You have selected {{ selected }}
                 You have selected {{ selected_2 }}
             </p>
+            <input type='hidden' value = "" name ="pk1_id" id ="pk1_id">
+            <input type='hidden' value = "" name ="pk2_id" id ="pk2_id">
             <input type="submit" value="Fight">
          </form>
-        
+
          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
          <script>
            $("#pk1").change(onPidChange);
            $("#pk2").change(onPidChange);
-        
+
            function onPidChange() {
-        
+
                 var url = $("#fightForm").attr("p-details-url");  // get the url of the `pokemon_details` view
                 var selectObj = $(this);
                 var pid = $(this).val();  // get the selected pokemon ID from the HTML input
-        
+
                 $.ajax({                       // initialize an AJAX request
                     url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
                     data: {
@@ -62,8 +64,9 @@
                 },
                 success: function (data) {   // `data` is the return of the `pokemon_details` view function
                 var divId = "#" + selectObj.attr('name') + "_details";
-                // alert('got ' + divId);
+                var hiddenId = "#" + selectObj.attr('name') + "_id";
                 $(divId).html(data);  // replace the contents of the with the data that came from the server
+                $(hiddenId).val(pid);
                }
              })
            };
