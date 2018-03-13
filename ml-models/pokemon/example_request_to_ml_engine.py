@@ -19,20 +19,25 @@ version = 'v10'
 # You can load credentials from an in-memory stream, in case you have the file loaded already, with service_account.Credentials.from_service_account_info
 # We can therefore build a json file ourselves from env variables instead loading the file
 
-json_data = {}
+service_acc_info = {}
 
-json_data["type"] = "service_account"
-json_data["project_id"] = "elegant-beach-197514"
-json_data["private_key_id"] = os.environ.get("private_key_id")
-json_data["private_key"] = os.environ.get("private_key")
-json_data["client_email"] = os.environ.get("client_email")
-json_data["client_id"] = os.environ.get("client_id")
-json_data["auth_uri"] = "https://accounts.google.com/o/oauth2/auth"
-json_data["token_uri"] = "https://accounts.google.com/o/oauth2/token"
-json_data["auth_provider_x509_cert_url"] = "https://www.googleapis.com/oauth2/v1/certs"
-json_data["client_x509_cert_url"] = os.environ.get("client_x509_cert_url")
+print(os.environ.get("private_key_id"))
+print(os.environ.get("private_key"))
+print(os.environ.get("client_email"))
+print(os.environ.get("client_id"))
+print(os.environ.get("client_x509_cert_url"))
 
-service_acc_info = json.dumps(json_data)
+service_acc_info["type"] = "service_account"
+service_acc_info["project_id"] = "elegant-beach-197514"
+service_acc_info["private_key_id"] = os.environ.get("private_key_id")
+service_acc_info["private_key"] = os.environ.get("private_key")
+service_acc_info["client_email"] = os.environ.get("client_email")
+service_acc_info["client_id"] = os.environ.get("client_id")
+service_acc_info["auth_uri"] = "https://accounts.google.com/o/oauth2/auth"
+service_acc_info["token_uri"] = "https://accounts.google.com/o/oauth2/token"
+service_acc_info["auth_provider_x509_cert_url"] = "https://www.googleapis.com/oauth2/v1/certs"
+service_acc_info["client_x509_cert_url"] = os.environ.get("client_x509_cert_url")
+
 credentials = service_account.Credentials.from_service_account_info(service_acc_info)
 
 service = googleapiclient.discovery.build('ml', 'v1', credentials=credentials)
