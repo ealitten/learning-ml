@@ -38,6 +38,9 @@ service_acc_info["token_uri"] = "https://accounts.google.com/o/oauth2/token"
 service_acc_info["auth_provider_x509_cert_url"] = "https://www.googleapis.com/oauth2/v1/certs"
 service_acc_info["client_x509_cert_url"] = os.environ.get("client_x509_cert_url")
 
+print(service_acc_info)
+print(json.dumps(service_acc_info))
+
 credentials = service_account.Credentials.from_service_account_info(service_acc_info)
 
 service = googleapiclient.discovery.build('ml', 'v1', credentials=credentials)
