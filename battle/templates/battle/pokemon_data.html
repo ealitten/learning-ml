@@ -44,19 +44,24 @@
               <input type="submit" value="Fight">
            </form>
 
+           <button p-details-url="{% url 'fight' %}" class='battle'>battle</button>
+           <div id='results'> </div>
+
          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
          <script>
            $("#pk1").change(onPidChange);
            $("#pk2").change(onPidChange);
+           $(".battle").click(fight)
+
 
            function onPidChange() {
 
-                var url = $("#fightForm").attr("p-details-url");  // get the url of the `pokemon_details` view
+                var url = $("#fightForm").attr("p-details-url"); // get the url of the `pokemon_details` view
                 var selectObj = $(this);
                 var pid = $(this).val();  // get the selected pokemon ID from the HTML input
 
                 $.ajax({                       // initialize an AJAX request
-                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
+                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_data/)
                     data: {
                     'pid': pid       // add the pokemon id to the GET parameters
                 },
@@ -70,6 +75,22 @@
                }
              })
            };
+
+          function fight() {
+            document.getElementById('results').innerHTML = $("#pk1_id").val()
+            $.ajax({
+                url: $(this).attr("p-details-url"),
+                data:{
+                 'pk1_id':  $("#pk1").val(),
+                 'pk2_id':  $("#pk2").val()
+               },
+            success: function (result) {
+              $('#results').html(result)
+            }
+          })
+        }
+
+
          </script>
     </body>
 
