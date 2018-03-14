@@ -2,6 +2,7 @@ from django import forms
 
 from .models import Pokemon
 
+
 class PokemonForm(forms.ModelForm):
 
     class Meta:
@@ -10,4 +11,4 @@ class PokemonForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields('name').queryset = Pokemon.objects.none()    
+        self.fields('name').queryset = Pokemon.objects.none()
