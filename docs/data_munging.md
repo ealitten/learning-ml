@@ -41,6 +41,15 @@ data.to_csv(path_or_buf='combats_relative_winner.csv', index=False)
 combats = pd.read_csv('./pokemon-challenge/combats_relative_winner.csv')
 ```
 
+This produced a nice table of relative winners:
+
+```
+First_pokemon,Second_pokemon,Winner
+266,298,1
+702,701,1
+191,668,1
+```
+
 Our second problem was that the `combats` table only contained two possible features: pokemon 1 and pokemon 2. Using only this data produced a model that was only ~52% accurate, so we clearly needed to use more of the data available to improve predictions. This involved merging the data from `pokemon_data` table into `combats` twice - once for each pokemon, to produce a table where a single row contains all the details of both combatants:
 
 
@@ -63,3 +72,5 @@ combats_with_both = pd.merge(combats_player_1, p2_data, on='Second_pokemon')
 ```
 combats_with_both.to_csv(path_or_buf='full_pokemon_data.csv', index=False)
 ```
+
+The end result can be seen in `full_pokemon_data` table.
