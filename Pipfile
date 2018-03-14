@@ -20,6 +20,8 @@ google-auth = "*"
 
 capybara-py = "*"
 selenium = "*"
+tensorflow = "==1.4"
+sklearn = "*"
 
 
 [requires]
