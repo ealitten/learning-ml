@@ -1,5 +1,6 @@
 import json
 import os
+import traceback
 
 import googleapiclient.discovery
 from django.http import HttpResponse
@@ -11,40 +12,49 @@ from .models import Pokemon
 
 
 def pokemon_data(request):
-    all_pokemon = Pokemon.objects.all()
-    selected = request.POST.get('pk1')
-    selected_2 = request.POST.get('pk2')
-    data = {'all_pokemon': all_pokemon,
-            'selected': selected, 'selected_2': selected_2}
-    return render(request, 'battle/pokemon_data.html', data)
+    try:
+        all_pokemon = Pokemon.objects.all()
+        selected = request.POST.get('pk1')
+        selected_2 = request.POST.get('pk2')
+        data = {'all_pokemon': all_pokemon,
+                'selected': selected, 'selected_2': selected_2}
+        return render(request, 'battle/pokemon_data.html', data)
+    except:
+        traceback.print_exc()
 
 
 def pokemon_details(request):
-    pid = request.GET.get('pid')
-    if pid is None:
-        return ''
-    else:
-        details = Pokemon.objects.get(uid=pid)
-        data = {'details': details}
-        return render(request, 'battle/pokemon_details.html', data)
+    try:
+        pid = request.GET.get('pid')
+        if pid is None:
+            return ''
+        else:
+            details = Pokemon.objects.get(uid=pid)
+            data = {'details': details}
+            return render(request, 'battle/pokemon_details.html', data)
+    except:
+        traceback.print_exc()
 
 
 def fight(request):
-    pokemon_1 = request.GET.get('pk1_id')
-    pokemon_2 = request.GET.get('pk2_id')
-    p1 = Pokemon.objects.get(uid=pokemon_1)
-    p2 = Pokemon.objects.get(uid=pokemon_2)
-    instances = [{"First_pokemon": p1.uid, "Second_pokemon": p2.uid, "p1_Type1":
-                  p1.type_1, "p2_Type1": p2.type_1, "p1_HP": p1.hp, "p2_HP": p2.hp, "p1_Attack": p1.attack,
-                  "p1_Defense": p1.defense, "p1_SpAtk": p1.sp_attack, "p1_SpDef": p1.sp_defense, "p1_Speed": p1.speed, "p2_Attack": p2.attack,
-                  "p2_Defense": p2.defense, "p2_SpAtk": p2.sp_attack, "p2_SpDef": p2.sp_defense, "p2_Speed": p2.speed}]
-    winner = json_request(instances)
-    probabilities = winner[0]["probabilities"]
-    p1_prob = probabilities[0]
-    p2_prob = probabilities[1]
-    result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name,
-              "p1_prob": (round(p1_prob * 100)), "p2_prob": (round(p2_prob * 100))}
-    return render(request, 'battle/winner.html', result)
+    try:
+        pokemon_1 = request.GET.get('pk1_id')
+        pokemon_2 = request.GET.get('pk2_id')
+        p1 = Pokemon.objects.get(uid=pokemon_1)
+        p2 = Pokemon.objects.get(uid=pokemon_2)
+        instances = [{"First_pokemon": p1.uid, "Second_pokemon": p2.uid, "p1_Type1":
+                    p1.type_1, "p2_Type1": p2.type_1, "p1_HP": p1.hp, "p2_HP": p2.hp, "p1_Attack": p1.attack,
+                    "p1_Defense": p1.defense, "p1_SpAtk": p1.sp_attack, "p1_SpDef": p1.sp_defense, "p1_Speed": p1.speed, "p2_Attack": p2.attack,
+                    "p2_Defense": p2.defense, "p2_SpAtk": p2.sp_attack, "p2_SpDef": p2.sp_defense, "p2_Speed": p2.speed}]
+        winner = json_request(instances)
+        probabilities = winner[0]["probabilities"]
+        p1_prob = probabilities[0]
+        p2_prob = probabilities[1]
+        result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name,
+                "p1_prob": (round(p1_prob * 100)), "p2_prob": (round(p2_prob * 100))}
+        return render(request, 'battle/winner.html', result)
+    except:
+        traceback.print_exc()
 
 
 def json_request(instances):
