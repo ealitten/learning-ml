@@ -14,7 +14,7 @@ Or if you already have the service account file loaded::
         service_account_info)
 ```
 
-You can load credentials from an in-memory dictionary, in case you have the file loaded already, with `service_account.Credentials.from_service_account_info`. We can therefore build a json file ourselves from Heroku environment variables instead loading the file! After some experimentation with \n characters, which Heroku sanitises in its config vars but which we don't want sanitised, we have a working implementation:
+You can load credentials from an in-memory dictionary, in case you have the file loaded already, with `service_account.Credentials.from_service_account_info`. We can therefore build a json file ourselves from Heroku environment variables instead of loading the file! After some experimentation with \n characters, which Heroku sanitises in its config vars but which we don't want sanitised, we have a working implementation:
 
 ```python
   project = 'elegant-beach-197514'

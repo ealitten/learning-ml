@@ -14,7 +14,7 @@ First_pokemon,Second_pokemon,Winner
 ...
 ````
 
-As mentioned above, predicted a winner in a fight between two pokemon is a binary classification problem, since there are only two outcomes. In this dataset, the winner is identified by their id so there are 800 outcomes! The first step was therefore to identify the winner relative to the pokemon fighting so we have either pokemon 1 (0) or pokemon 2 (0) as the winner. The data munging was done in the terminal, rather than saved as a script, since it was a one-off process:
+As mentioned above, predicted a winner in a fight between two pokemon is a binary classification problem, since there are only two outcomes. In this dataset, the winner is identified by their id so there are 800 outcomes! The first step was therefore to identify the winner relative to the pokemon fighting so we have either pokemon 1 (0) or pokemon 2 (1) as the winner. The data munging was done in the terminal, rather than saved as a script, since it was a one-off process:
 
 - Storing ‘combats.csv(win/lose data)’ file data into a dataframe variable data
 ```
@@ -31,7 +31,7 @@ for index, row in data.iterrows():
    row['Winner'] = 1
 ```
 
-- Writing updated data( where Winner=0,Loser=1) to 'combats_relative_winner.csv'
+- Writing updated data (where Winner=0,Loser=1) to 'combats_relative_winner.csv'
 ```
 data.to_csv(path_or_buf='combats_relative_winner.csv', index=False)
 ```
