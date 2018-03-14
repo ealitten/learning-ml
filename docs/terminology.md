@@ -11,7 +11,7 @@
 - **Training/Test Data** - A supervised ML model needs a labelled dataset to train with, and some further unseen data to evaluate the accuracy of predictions. We therefore split our dataset 80:20 between these two goals; it is important not to use the same data for both as this will not give a true indication of how the model generalises to new data.
 - **Linear regression** - Linear regression aims to find a linear relation between a variable (*x*) and an outcome (*y*). If you were to plot this on a graph, the relationship would be *y = mx + c*, where *m* is the slope of our line and *c* is the y-intercept. In machine learning, this is represented as:
 
-  ![we predicted that](https://github.com/ealitten/wepredictedthat/raw/master/docs/images/linear_regression_1_label.png)
+  ![we predicted that](images/linear_regression_1_label.png)
 
   where:
 
@@ -22,7 +22,7 @@
 
   In our model, we are using 16 known inputs, so each one has its own weight:
 
-  ![we predicted that](https://github.com/ealitten/wepredictedthat/raw/master/docs/images/linear_regression_multi_label.png)
+  ![we predicted that](images/linear_regression_multi_label.png)
 
   Unfortunately this would require 17 dimensions to represent visually!
 

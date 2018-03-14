@@ -1,4 +1,4 @@
-![we predicted that](https://github.com/ealitten/wepredictedthat/raw/master/docs/images/wp_blue_200.png)
+![we predicted that](docs/images/wp_blue_200.png)
 
 # We Predicted That
 
