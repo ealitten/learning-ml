@@ -15,7 +15,7 @@ class CapybaraTestCase(unittest.TestCase):
 
     def setUp(self):
         self.page = capybara.dsl.page
-        
+
 
     def test_battle_page_works(self):
         self.page.visit('index')
@@ -26,7 +26,7 @@ class CapybaraTestCase(unittest.TestCase):
         self.page.visit('index')
         self.page.click_link('Your Pokemon Battle')
         self.page.select("Charmander", field="pk1")
-        
+
         assert self.page.has_content('Charmander')
 
     def test_have_a_battle(self):
@@ -38,7 +38,7 @@ class CapybaraTestCase(unittest.TestCase):
        self.page.select("Wartortle", field="pk2")
        self.page.click_button("Fight")
        assert self.page.has_content("grass")
-    
+
 
     def tearDown(self):
        capybara.reset_sessions()
