@@ -9,3 +9,12 @@ h1{
     width: 500px;
     margin: 30px 150px 10px 150px;
 }
+
+.wrapper {
+  margin: 100px;
+  background-color: red;
+}
+
+input {
+    background-color: red;
+}
