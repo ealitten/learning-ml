@@ -49,7 +49,7 @@ Have a look at our [team blog](https://medium.com/@wepredictedthat) for the team
 
 We defined our learning project MVP as:
 ```
-Using Titanic survivor data, predict the survival outcome of passengers a better than chance.
+Using Titanic survivor data, predict the survival outcome of passengers better than chance (50%).
 ```
 
 The MVP for our main project was defined as:
