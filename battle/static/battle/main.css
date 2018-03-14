@@ -2,19 +2,49 @@ body {
     background-color: black;
     color: white;
     font-family: 'VT323', monospace;
+    align-items: center;
 }
 
 h1{
-    font-size: 40px;
-    width: 500px;
-    margin: 30px 150px 10px 150px;
+  font-size: 40px;
+}
+
+input[type='submit'] {
+  margin-top: 3%;
+  border-radius: 10%;
+  width: 15%;
+  padding: 10px 0;
+  font-size: 30px;
+  font-family: VT323;
+  margin-left: 38%;
+
+  color: white;
+  background-color: blue;
+}
+
+form .left{
+  float: left;
+  width: 50%;
+}
+
+form .right{
+  float: right;
+  width: 50%;
+}
+
+table, td {
+  border: solid 1px black;
 }
 
 .wrapper {
-  margin: 100px;
   background-color: red;
+      display: flex;
 }
 
-input {
-    background-color: red;
+select{
+   margin: 5% 0 5% 25%;
+}
+
+.image{
+  display: flex;
 }
