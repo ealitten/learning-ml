@@ -32,3 +32,14 @@ python manage.py startapp battle
 ```
 python manage.py runserver
 ```
+4. We decided to use PostgreSQL instead of Django default SQLite database because its a              production grade database.
+
+5. To run tests we need to change following in settings.py:
+- This setting is required so that our tests can run; even though this is not
+  required when running the server locally.
+
+```
+DEBUG = True
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '']
+```
