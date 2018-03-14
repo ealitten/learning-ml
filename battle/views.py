@@ -1,12 +1,9 @@
-import json
 import os
 
 import googleapiclient.discovery
-from django.http import HttpResponse
 from django.shortcuts import render
 from google.oauth2 import service_account
 
-from .forms import PokemonForm
 from .models import Pokemon
 
 
