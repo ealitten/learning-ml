@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import views
+from django.templatetags.static import static
 
 urlpatterns = [
     path('index', views.index, name='index'),
