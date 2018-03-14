@@ -31,8 +31,16 @@ Once we had solved the titanic challenge, we chose a main project: using a datas
 
 ## Approach
 
-1. See our [documentation file](https://github.com/ealitten/we-predicted-that/blob/master/ml-models/pokemon/documentation.md) for more detail on the technical implementation
-2. Have a look at our [team blog](https://medium.com/@wepredictedthat) for the teamwork side of things
+Details on the technical implementation:
+
+1. [Intro to Machine Learning & terminology](https://github.com/ealitten/we-predicted-that/blob/master/docs/terminology.md))
+2. [Data :munging"](https://github.com/ealitten/we-predicted-that/blob/master/docs/terminology.md))
+3. Training the model
+4. Exporting and uploading the model to Google ML engine
+5. Linking up the web app on Heroku with the model
+
+
+Have a look at our [team blog](https://medium.com/@wepredictedthat) for the teamwork side of things!
 
 
 ## MVP
