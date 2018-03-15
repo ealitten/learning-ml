@@ -12,12 +12,8 @@ from .models import Pokemon
 
 def pokemon_data(request):
     all_pokemon = Pokemon.objects.all()
-    selected = request.POST.get('pk1')
-    selected_2 = request.POST.get('pk2')
-    data = {'all_pokemon': all_pokemon,
-            'selected': selected, 'selected_2': selected_2}
+    data = {'all_pokemon': all_pokemon}
     return render(request, 'battle/pokemon_data.html', data)
-
 
 def pokemon_details(request):
     pid = request.GET.get('pid')
@@ -44,6 +40,7 @@ def fight(request):
     p2_prob = probabilities[1]
     result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name,
               "p1_prob": (round(p1_prob * 100)), "p2_prob": (round(p2_prob * 100))}
+
     return render(request, 'battle/winner.html', result)
 
 

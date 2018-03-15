@@ -11,7 +11,7 @@
 </head>
     <body>
       <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
-        <form action="/fight/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
+        <form action="" id="fightForm" novalidate p-details-url="{% url 'pokemon_details' %}">
            {% csrf_token %}
         <div class="wrapper">
         <div class='left'>
@@ -41,7 +41,6 @@
           </div>
               <input type='hidden' value = "" name ="pk1_id" id ="pk1_id">
               <input type='hidden' value = "" name ="pk2_id" id ="pk2_id">
-              <input type="submit" value="Fight">
            </form>
 
            <button p-details-url="{% url 'fight' %}" class='battle'>battle</button>
