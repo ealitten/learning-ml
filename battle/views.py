@@ -9,6 +9,7 @@ from google.oauth2 import service_account
 from .forms import PokemonForm
 from .models import Pokemon
 
+
 def pokemon_data(request):
     all_pokemon = Pokemon.objects.all()
     selected = request.POST.get('pk1')
@@ -29,8 +30,8 @@ def pokemon_details(request):
 
 
 def fight(request):
-    pokemon_1 = request.POST.get('pk1_id')
-    pokemon_2 = request.POST.get('pk2_id')
+    pokemon_1 = request.GET.get('pk1_id')
+    pokemon_2 = request.GET.get('pk2_id')
     p1 = Pokemon.objects.get(uid=pokemon_1)
     p2 = Pokemon.objects.get(uid=pokemon_2)
     instances = [{"First_pokemon": p1.uid, "Second_pokemon": p2.uid, "p1_Type1":

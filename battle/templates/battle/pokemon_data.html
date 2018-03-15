@@ -6,56 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokemon Battle !!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'battle/pokemon.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'battle/main.css' %}" />
 </head>
     <body>
-    <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
-         <form action="/fight/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
-            {% csrf_token %}
-            <br>
-            <br>
-            <table>
-                <tr>
-                    <th><select name="pk1" id="pk1">
-                            <option value="">---------</option>
-                            {% for p in all_pokemon %}
-                            <option value="{{ p.uid }}">{{ p.name }}</option>
-                            {% endfor %}
-                        </select></th>
-                    <th><select name="pk2" id="pk2">
-                            <option value="">---------</option>
-                            {% for p in all_pokemon %}
-                            <option value="{{ p.uid }}">{{ p.name }}</option>
-                            {% endfor %}
-                    </select></th>
-                </tr>
-                <tr>
-                    <td><div id="pk1_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div></td>
-                    <td><div id="pk2_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div></td>
-                </tr>
-                <tr>
-                    <td><div id="pk1_details"></div></td>
-                    <td><div id="pk2_details"></div></td>
-                </tr>
-            </table>
-            <input type='hidden' value = "" name ="pk1_id" id ="pk1_id">
-            <input type='hidden' value = "" name ="pk2_id" id ="pk2_id">
-            <input type="submit" value="Fight">
-         </form>
+      <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
+        <form action="/fight/" id="fightForm" method="post" novalidate p-details-url="{% url 'pokemon_details' %}">
+           {% csrf_token %}
+        <div class="wrapper">
+        <div class='left'>
+           <select name="pk1" id="pk1">
+              <option value="">---------</option>
+              {% for p in all_pokemon %}
+              <option value="{{ p.uid }}">{{ p.name }}</option>
+              {% endfor %}
+          </select>
+          <div class = 'image'>
+            <div id="pk1_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
+            <div id="pk1_details"></div>
+          </div>
+        </div>
+        <div class ='right'>
+              <select name="pk2" id="pk2">
+                      <option value="">---------</option>
+                      {% for p in all_pokemon %}
+                      <option value="{{ p.uid }}">{{ p.name }}</option>
+                      {% endfor %}
+              </select>
+              <div class='image'>
+                <div id="pk2_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
+                <div id="pk2_details"></div>
+              </div>
+          </div>
+          </div>
+              <input type='hidden' value = "" name ="pk1_id" id ="pk1_id">
+              <input type='hidden' value = "" name ="pk2_id" id ="pk2_id">
+              <input type="submit" value="Fight">
+           </form>
+
+           <button p-details-url="{% url 'fight' %}" class='battle'>battle</button>
+           <div id='results'> </div>
 
          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
          <script>
            $("#pk1").change(onPidChange);
            $("#pk2").change(onPidChange);
+           $(".battle").click(fight)
+
 
            function onPidChange() {
 
-                var url = $("#fightForm").attr("p-details-url");  // get the url of the `pokemon_details` view
+                var url = $("#fightForm").attr("p-details-url"); // get the url of the `pokemon_details` view
                 var selectObj = $(this);
                 var pid = $(this).val();  // get the selected pokemon ID from the HTML input
 
                 $.ajax({                       // initialize an AJAX request
-                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_deta/)
+                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/pokemon_data/)
                     data: {
                     'pid': pid       // add the pokemon id to the GET parameters
                 },
@@ -69,6 +75,21 @@
                }
              })
            };
+
+          function fight() {
+            $.ajax({
+                url: $(this).attr("p-details-url"),
+                data:{
+                 'pk1_id':  $("#pk1").val(),
+                 'pk2_id':  $("#pk2").val()
+               },
+            success: function (result) {
+              $('#results').html(result)
+            }
+          })
+        }
+
+
          </script>
     </body>
 
