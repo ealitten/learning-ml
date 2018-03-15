@@ -36,6 +36,6 @@ class CapybaraTestCase(unittest.TestCase):
         assert self.page.has_text("Probability Bulbasaur will win is 44%")
         assert self.page.has_text("Probability Ivysaur will win is 56%")
         
-
+        
     def tearDown(self):
         capybara.reset_sessions()
