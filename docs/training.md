@@ -25,5 +25,8 @@ We found that a good approach is to first start with smaller batch sizes and ste
 
 The graph below shows our progress:
 
+## Testing
 
-Eventually, following this cycle we found a good set of stats, using 18 variables (excluding Pokemon name and generation) and ran it at a batch size of 10,000, with 20,000 steps and reached 86.1% accuracy.
+At the end, you then give a new data set to the model, to make predictions against. These are a benchmark, to make sure that the model can actually make predictions with new scenarios, rather than just for the data you trained it on. Which is why we held back 10,000 battles!
+
+Eventually, following this cycle we found a good set of stats, using 18 variables (excluding Pokemon name and generation) and ran it at a batch size of 10,000, with 20,000 steps and **reached 86.1% accuracy**.
