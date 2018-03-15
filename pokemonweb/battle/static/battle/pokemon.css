@@ -1,12 +1,12 @@
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #33a1d4;   
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #33a1d4;
 }
 
-table,td,tr,th {
-    border: 2px solid black;
+table, td, tr, th {
+  border: 2px solid black;
 }
 
-#pk2,#pk2_details{ 
-    float: right;
-    }
+#pk2, #pk2_details {
+  float: right;
+}
