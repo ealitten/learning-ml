@@ -11,20 +11,15 @@ from .forms import PokemonForm
 from .models import Pokemon
 
 
-def pokemon_data(request):
-    try:
+def pokemon_data(request): 
         all_pokemon = Pokemon.objects.all()
         selected = request.POST.get('pk1')
         selected_2 = request.POST.get('pk2')
         data = {'all_pokemon': all_pokemon,
                 'selected': selected, 'selected_2': selected_2}
         return render(request, 'battle/pokemon_data.html', data)
-    except:
-        traceback.print_exc()
-
 
 def pokemon_details(request):
-    try:
         pid = request.GET.get('pid')
         if pid is None:
             return ''
@@ -32,12 +27,8 @@ def pokemon_details(request):
             details = Pokemon.objects.get(uid=pid)
             data = {'details': details}
             return render(request, 'battle/pokemon_details.html', data)
-    except:
-        traceback.print_exc()
-
 
 def fight(request):
-    try:
         pokemon_1 = request.GET.get('pk1_id')
         pokemon_2 = request.GET.get('pk2_id')
         p1 = Pokemon.objects.get(uid=pokemon_1)
@@ -53,8 +44,6 @@ def fight(request):
         result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name,
                 "p1_prob": (round(p1_prob * 100)), "p2_prob": (round(p2_prob * 100))}
         return render(request, 'battle/winner.html', result)
-    except:
-        traceback.print_exc()
 
 
 def json_request(instances):
