@@ -3,10 +3,12 @@ body {
     color: white;
     font-family: 'VT323', monospace;
     align-items: center;
+    font-size: 20px
 }
 
 h1{
   font-size: 40px;
+  text-align: center;
 }
 
 .wrapper {
@@ -26,24 +28,44 @@ button {
   background-color: blue;
 }
 
+button:hover {
+  background-color: red;
+}
+
 form .left{
   float: left;
   width: 50%;
+  margin-left: 9%;
 }
 
 form .right{
   float: right;
   width: 50%;
+  margin-right: 7%;
 }
 
-table, td {
+table {
   border: solid 1px black;
 }
 
-select{
-   margin: 5% 0 5% 25%;
+span {
+  margin: 10px 10px
 }
+
+select{
+  background-color: white;
+  border: none;
+  border-radius: 0%;
+  font-size: 20px;
+  font-family: 'VT323', monospace;
+  margin: 5% 0 5% 25%;
+}
+
 
 .image{
   display: flex;
+}
+
+img {
+  padding: 0px 25px 0px 10px
 }
