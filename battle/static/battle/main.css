@@ -9,6 +9,11 @@ h1{
   font-size: 40px;
 }
 
+.wrapper {
+  background-color: red;
+      display: flex;
+}
+
 button {
   margin-top: 3%;
   border-radius: 10%;
@@ -33,11 +38,6 @@ form .right{
 
 table, td {
   border: solid 1px black;
-}
-
-.wrapper {
-  background-color: red;
-      display: flex;
 }
 
 select{
