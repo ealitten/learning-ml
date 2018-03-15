@@ -76,10 +76,12 @@ select {
 
 #pk1_details {
   margin: 0 auto;
+  margin-right: 10px;
 }
 
 #pk2_detail {
   margin: 0 auto;
+  margin-right: 10px;
 }
 
 #results {
@@ -87,6 +89,5 @@ select {
 }
 
 img {
-  padding: 10px 25px 10px 10px;
-  /* margin: 0px 20px; */
+  padding: 10px 10px 10px 10px;
 }
