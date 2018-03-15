@@ -1,17 +1,17 @@
 body {
-    background-color: black;
-    color: white;
-    font-family: 'VT323', monospace;
-    align-items: center;
+  background-color: black;
+  color: white;
+  font-family: 'VT323', monospace;
+  align-items: center;
 }
 
-h1{
+h1 {
   font-size: 40px;
 }
 
 .wrapper {
   background-color: red;
-      display: flex;
+  display: flex;
 }
 
 button {
@@ -26,12 +26,12 @@ button {
   background-color: blue;
 }
 
-form .left{
+form .left {
   float: left;
   width: 50%;
 }
 
-form .right{
+form .right {
   float: right;
   width: 50%;
 }
@@ -40,10 +40,10 @@ table, td {
   border: solid 1px black;
 }
 
-select{
-   margin: 5% 0 5% 25%;
+select {
+  margin: 5% 0 5% 25%;
 }
 
-.image{
+.image {
   display: flex;
 }
