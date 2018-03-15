@@ -43,3 +43,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '']
 ```
+-To run feature test we need to run below command so that static files are available for the test to run:
+
+```
+python manage.py collectstatic
+```
