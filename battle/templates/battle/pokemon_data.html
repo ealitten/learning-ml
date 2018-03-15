@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'battle/main.css' %}" />
 </head>
     <body>
-      <h1>Welcome to We Predicted That's Pokemon Battle!</h1>
+      <h1>Battle your Pokemon!</h1>
         <form action="" id="fightForm" novalidate p-details-url="{% url 'pokemon_details' %}">
            {% csrf_token %}
         <div class="wrapper">
@@ -42,7 +42,7 @@
           </div>
           </div>
            </form>
-           <button p-details-url="{% url 'fight' %}" class='battle'>battle</button>
+           <button p-details-url="{% url 'fight' %}" class='battle'>Let's Battle!</button>
            <div id='results'> </div>
     </body>
 

@@ -1,17 +1,22 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #318DBA;
+    color: black;
     font-family: 'VT323', monospace;
     align-items: center;
+    font-size: 20px;
+    text-align: center;
 }
 
 h1{
   font-size: 40px;
+  text-align: center;
+  color: white;
 }
 
 .wrapper {
-  background-color: red;
+  background-color: #aaa;
       display: flex;
+      padding-bottom: 30px;
 }
 
 button {
@@ -21,29 +26,50 @@ button {
   padding: 10px 0;
   font-size: 30px;
   font-family: VT323;
-  margin-left: 38%;
   color: white;
   background-color: blue;
+}
+
+button:hover {
+  background-color: red;
 }
 
 form .left{
   float: left;
   width: 50%;
+  margin-left: %;
 }
 
 form .right{
   float: right;
   width: 50%;
+  margin-right: 6%;
 }
 
-table, td {
-  border: solid 1px black;
+table {
+  border: solid 2px black;
+
+}
+
+span {
+  margin: 10px 10px;
 }
 
 select{
-   margin: 5% 0 5% 25%;
+  background-color: white;
+  border: none;
+  border-radius: 0%;
+  font-size: 20px;
+  font-family: 'VT323', monospace;
+  margin: 5% 0 5% 25%;
 }
+
 
 .image{
   display: flex;
+}
+
+img {
+  padding: 10px 25px 10px 10px;
+  margin: 0px 20px;
 }
