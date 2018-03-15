@@ -3,6 +3,7 @@ __pycache__/
 *$py.class
 .DS_Store
 export/
+htmlcov/
 
 authentication.json
 
@@ -194,3 +195,6 @@ project/data/*
 .env
 celerybeat-schedule.*
 pokemon/Pokemon_predictor-b0b88c9c9f93.json
+
+staticfiles/
+htmlcov/

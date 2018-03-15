@@ -1,5 +1,6 @@
 import json
 import os
+import traceback
 
 import googleapiclient.discovery
 from django.http import HttpResponse
@@ -10,26 +11,24 @@ from .forms import PokemonForm
 from .models import Pokemon
 
 
+
 def pokemon_data(request):
     all_pokemon = Pokemon.objects.all()
-    selected = request.POST.get('pk1')
-    selected_2 = request.POST.get('pk2')
-    data = {'all_pokemon': all_pokemon,
-            'selected': selected, 'selected_2': selected_2}
+    data = {'all_pokemon': all_pokemon}
     return render(request, 'battle/pokemon_data.html', data)
 
 
 def pokemon_details(request):
-    pid = request.GET.get('pid')
-    if pid is None:
-        return ''
-    else:
-        details = Pokemon.objects.get(uid=pid)
-        data = {'details': details}
-        return render(request, 'battle/pokemon_details.html', data)
-
+        pid = request.GET.get('pid')
+        if pid is None:
+            return ''
+        else:
+            details = Pokemon.objects.get(uid=pid)
+            data = {'details': details}
+            return render(request, 'battle/pokemon_details.html', data)
 
 def fight(request):
+
     pokemon_1 = request.GET.get('pk1_id')
     pokemon_2 = request.GET.get('pk2_id')
     p1 = Pokemon.objects.get(uid=pokemon_1)
@@ -44,6 +43,7 @@ def fight(request):
     p2_prob = probabilities[1]
     result = {"probabilities": probabilities, "p1": p1.name, "p2": p2.name,
               "p1_prob": (round(p1_prob * 100)), "p2_prob": (round(p2_prob * 100))}
+
     return render(request, 'battle/winner.html', result)
 
 
@@ -86,3 +86,6 @@ def json_request(instances):
         raise RuntimeError(response["error"])
 
     return (response["predictions"])
+
+     
+
