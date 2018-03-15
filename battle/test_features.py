@@ -17,11 +17,11 @@ class CapybaraTestCase(unittest.TestCase):
        self.page = capybara.dsl.page
 
 
-   def test_battle_page_works(self):
-       self.page.visit('/')
-       print(self.page)
-       assert self.page.has_text("Welcome to We Predicted That's Pokemon Battle!")
-       print(self.page)
+    def test_battle_page_works(self):
+        self.page.visit('/')
+        print(self.page)
+        assert self.page.has_text("Welcome to We Predicted That's Pokemon Battle!")
+        print(self.page)
 
    # def test_pokemon(self):
    #     self.pokemon = Pokemon.objects.create(uid=0, name='Charmander')
@@ -41,5 +41,5 @@ class CapybaraTestCase(unittest.TestCase):
    #    assert self.page.has_content("Probability Mega Venusaur will win is 87% Probability Charmander will win is 13%")
 
 
-   def tearDown(self):
-      capybara.reset_sessions()
+    def tearDown(self):
+        capybara.reset_sessions()
