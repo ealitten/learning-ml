@@ -17,8 +17,9 @@ $( document ).ready(function() {
        success: function (data) {   // `data` is the return of the `pokemon_details` view function
        var divId = `#${selectObj.attr('name')}_details`;
        var imageId = `#${selectObj.attr('name')}_img`;
+       var html = `<img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/${pid}.png">`
        $(divId).html(data);  // replace the contents of the with the data that came from the server
-       $(imageId).html(`<img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/${pid}.png">`)
+       $(imageId).html(html)
       }
     })
   };
