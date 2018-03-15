@@ -4,6 +4,52 @@
 
 One of the goals we decided at the start of this project was to learn a new language - Python seemed the obvious choice since the project revolved around machine learning, and it's the language of choice for many ML libraries (for example, it's the only fully supported language for TensorFlow).  When it came to creating a web app to interact with our model, we were keen to continue building our knowledge of Python rather than sticking with a known framework such as Rails, so we picked Django to build the app.
 
+
+Django follows Model-View-Template (MVT) pattern compared to the Model-View-Controller (MVC) pattern.
+
+The following diagram illustrates how each of the components of the MVT pattern interacts with each other to serve a user request −
+
+![MVT](images/MVT.png)
+
+1. Start new project pokemonweb by entering below command from command line:
+
+```
+django-admin startproject pokemonweb
+```
+This will create a pokemonnweb directory with following in your current directory.
+- manage.py: A command-line utility that lets you interact with this Django project in various      ways.
+- __init__.py: An empty file that tells Python that this directory should be                        considered a Python package.
+- settings.py: Settings/configuration for this Django project. Django settings will tell     you    all about how settings work.
+- urls.py: The URL declarations for this Django project; a “table of contents” of your              Django-powered site.
+- wsgi.py: An entry-point for WSGI-compatible web servers to serve your project. 
+
+2. Create app battle :
+
+```
+python manage.py startapp battle
+```
+3. Run server :
+
+```
+python manage.py runserver
+```
+4. We decided to use PostgreSQL instead of Django default SQLite database because its a              production grade database.
+
+5. To run tests we need to change following in settings.py:
+- This setting is required so that our tests can run; even though this is not
+  required when running the server locally.
+
+```
+DEBUG = True
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '']
+```
+-To run feature test we need to run below command so that static files are available for the test to run:
+
+```
+python manage.py collectstatic
+```
+
 ### Python
 
 Python is a multi-paradigm language that supports both object-oriented and functional programming approaches.  We used Python 3.6, the latest release, and found that the Python syntax was reasonably familiar given our prior background in Ruby.  Perhaps the greatest challenge we had with Python was getting used to its rigorous approach to indentation but the upside of this was the improvement of our general coding discipline.
@@ -32,3 +78,4 @@ Particular areas of note were:
 - each test forms a method within a test class (or fixture), taking the main object as an argument.
 - the assertions available to us through unittest were more limited than those that we had become used to through Rspec and Jasmine.
 - feature testing in general appears to be less supported in Python, or through unittest at least.
+
