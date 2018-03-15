@@ -9,7 +9,7 @@ h1{
   font-size: 40px;
 }
 
-input[type='submit'] {
+button {
   margin-top: 3%;
   border-radius: 10%;
   width: 15%;
@@ -17,7 +17,6 @@ input[type='submit'] {
   font-size: 30px;
   font-family: VT323;
   margin-left: 38%;
-
   color: white;
   background-color: blue;
 }
