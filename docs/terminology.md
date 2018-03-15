@@ -28,4 +28,4 @@
 
 - **Logistic regression** - A subcategory of linear regression where the desired output is categorical i.e. it belongs to a number of discrete catgories. In our case just two: pokemon 1 wins or pokemon 2 wins. This makes our problem a *binary classification* problem.
 
-- **Loss Function** - How the the programme measures how good a model during training. The loss function is measuring not just how good its predictions were, but how varied they are. It values predictability highly and  would rather have a lot of mediocre results which were slightly off, then sometimes be totally right, and other times be wildly off.
+- **Loss Function** - How the a  machine measures a model's accuracy during training. The loss function measures both how close its predictions were, but how varied they are. It values predictability highly and  would rather have a model that makes mediocre results which were slightly off, than a model that was sometimes totally right, and other times be wildly off.
