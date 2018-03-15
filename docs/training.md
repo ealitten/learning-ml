@@ -2,10 +2,12 @@
 
 ## Step 2 - Writing and training the model
 
-In machine learning, there are two types of algorithm: supervised and unsupervised. 
+In machine learning, there are two types of algorithm: supervised and unsupervised. Supervised  learning is when you provide the algorithm with the 'right' answers (the label) -  e.g. you wanted a machine to learn to choose between cats and dogs, you'd give it a dataset of cat & dog photos, with labels identifying which class ("cat" or "dog") each photo belonged to. As the training function runs through the data, it builds a model using this training data. 
 
-Supervised  learning is when you provide the algorithm with the 'right' answers (the label) -  e.g. you wanted a machine to learn to choose between cats and dogs, you'd give it a dataset of cat & dog photos, with labels identifying which class ("cat" or "dog") each photo belonged to. As the training function runs through the data, it builds a model using this training data. As it trains, the model makes a prediction and then compares this to the label given to that row of the data set - it measures the overall accuracy of its predictions with a 'loss function'. In Linear Regression this is usually using Least Mean Squares: it takes the numerical differences between the predicted value and the label, then squares each of these and takes the mean across the data set. Squaring the values penalises far-off predictions more heavily than close ones, so the function favours several close results over one perfect prediction and one far-off one,.
+### Loss functions
+As it trains, the model makes a prediction and then compares this to the label given to that row of the data set - it measures the overall accuracy of its predictions with a 'loss function'. Loss is the penalty for a bad prediction i.e. , loss is a number indicating how bad the model's prediction was on a single example. he goal of training a model is to find a set of weights and biases that have low loss, on average, across all examples. In Linear Regression this is often done using the mean square error: it takes the numerical differences between the predicted value and the label, then squares each of these and takes the mean across the data set. Squaring the values penalises far-off predictions more heavily than close ones, so the function favours several close results over one perfect prediction and one far-off one.
 
+### The balance of training
 When you train a machine, its all about trying to balance the accuracy with getting quick results and the computing power you have to hand (our data is small, so there was relatively little issues with the third). When you try and improve your model you essentially have four factors to control how good it is/how fast it runs. 
 
 1. **Steps** - the more steps, the more likely it will be to get close to finishing near the optimal point. 
