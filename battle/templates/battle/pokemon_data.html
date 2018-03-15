@@ -1,49 +1,50 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pokemon Battle !!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="{% static 'battle/requests.js' %}"></script>
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'battle/main.css' %}" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pokemon Battle !!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="{% static 'battle/requests.js' %}"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'battle/main.css' %}" />
 </head>
-    <body>
-      <h1>Battle your Pokemon!</h1>
-        <form action="" id="fightForm" novalidate p-details-url="{% url 'pokemon_details' %}">
-           {% csrf_token %}
-        <div class="wrapper">
-        <div class='left'>
-           <select name="pk1" id="pk1">
+
+<body>
+  <h1>Battle your Pokemon!</h1>
+  <form action="" id="fightForm" novalidate p-details-url="{% url 'pokemon_details' %}">
+    {% csrf_token %}
+    <div class="wrapper">
+      <div class='left'>
+        <select name="pk1" id="pk1">
               <option value="">---------</option>
               {% for p in all_pokemon %}
               <option value="{{ p.uid }}">{{ p.name }}</option>
               {% endfor %}
           </select>
-          <div class = 'image'>
-            <div id="pk1_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
-            <div id="pk1_details"></div>
-          </div>
+        <div class='image'>
+          <div id="pk1_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
+          <div id="pk1_details"></div>
         </div>
-        <div class ='right'>
-              <select name="pk2" id="pk2">
+      </div>
+      <div class='right'>
+        <select name="pk2" id="pk2">
                       <option value="">---------</option>
                       {% for p in all_pokemon %}
                       <option value="{{ p.uid }}">{{ p.name }}</option>
                       {% endfor %}
               </select>
-              <div class='image'>
-                <div id="pk2_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
-                <div id="pk2_details"></div>
-              </div>
-          </div>
-          </div>
-           </form>
-           <button p-details-url="{% url 'fight' %}" class='battle'>Let's Battle!</button>
-           <div id='results'> </div>
-    </body>
+        <div class='image'>
+          <div id="pk2_img"><img src="https://storage.googleapis.com/wepredictedthat-pokemon/pokemon-images/unknown.png"></div>
+          <div id="pk2_details"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button p-details-url="{% url 'fight' %}" class='battle'>Let's Battle!</button>
+  <div id='results'> </div>
+</body>
 
-    </html>
+</html>

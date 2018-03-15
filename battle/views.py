@@ -1,15 +1,13 @@
-import json
 import os
-import traceback
 
-import googleapiclient.discovery
-from django.http import HttpResponse
+
 from django.shortcuts import render
 from google.oauth2 import service_account
 
-from .forms import PokemonForm
-from .models import Pokemon
+import googleapiclient.discovery
 
+
+from .models import Pokemon
 
 
 def pokemon_data(request):
@@ -19,13 +17,14 @@ def pokemon_data(request):
 
 
 def pokemon_details(request):
-        pid = request.GET.get('pid')
-        if pid is None:
-            return ''
-        else:
-            details = Pokemon.objects.get(uid=pid)
-            data = {'details': details}
-            return render(request, 'battle/pokemon_details.html', data)
+    pid = request.GET.get('pid')
+    if pid is None:
+        return ''
+    else:
+        details = Pokemon.objects.get(uid=pid)
+        data = {'details': details}
+        return render(request, 'battle/pokemon_details.html', data)
+
 
 def fight(request):
 
@@ -86,6 +85,3 @@ def json_request(instances):
         raise RuntimeError(response["error"])
 
     return (response["predictions"])
-
-     
-

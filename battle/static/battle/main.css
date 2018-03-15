@@ -1,13 +1,13 @@
 body {
-    background-color: #318DBA;
-    color: black;
-    font-family: 'VT323', monospace;
-    align-items: center;
-    font-size: 20px;
-    text-align: center;
+  background-color: #318DBA;
+  color: black;
+  font-family: 'VT323', monospace;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
 }
 
-h1{
+h1 {
   font-size: 40px;
   text-align: center;
   color: white;
@@ -15,8 +15,8 @@ h1{
 
 .wrapper {
   background-color: #aaa;
-      display: flex;
-      padding-bottom: 30px;
+  display: flex;
+  padding-bottom: 30px;
 }
 
 button {
@@ -34,13 +34,13 @@ button:hover {
   background-color: red;
 }
 
-form .left{
+form .left {
   float: left;
   width: 50%;
   margin-left: %;
 }
 
-form .right{
+form .right {
   float: right;
   width: 50%;
   margin-right: 6%;
@@ -48,14 +48,13 @@ form .right{
 
 table {
   border: solid 2px black;
-
 }
 
 span {
   margin: 10px 10px;
 }
 
-select{
+select {
   background-color: white;
   border: none;
   border-radius: 0%;
@@ -64,8 +63,7 @@ select{
   margin: 5% 0 5% 25%;
 }
 
-
-.image{
+.image {
   display: flex;
 }
 

@@ -1,7 +1,6 @@
 from django.urls import path
 
 from . import views
-from django.templatetags.static import static
 
 urlpatterns = [
     path('', views.pokemon_data, name='pokemon_data'),
