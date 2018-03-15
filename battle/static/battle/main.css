@@ -1,5 +1,5 @@
 body {
-  background-color: #318DBA;
+  background-color: #318dba;
   color: black;
   font-family: 'VT323', monospace;
   align-items: center;
@@ -37,13 +37,11 @@ button:hover {
 form .left {
   float: left;
   width: 50%;
-  margin-left: %;
 }
 
 form .right {
   float: right;
   width: 50%;
-  margin-right: 6%;
 }
 
 table {
@@ -60,14 +58,26 @@ select {
   border-radius: 0%;
   font-size: 20px;
   font-family: 'VT323', monospace;
-  margin: 5% 0 5% 25%;
+  margin: 5% 0 5% 0%;
 }
 
 .image {
   display: flex;
+  margin-right: 10;
+}
+
+#pk1_img {
+  margin: 0 auto;
+}
+
+#pk2_img {
+  margin: 0 auto;
+}
+
+#results {
+  color: white;
 }
 
 img {
-  padding: 10px 25px 10px 10px;
-  margin: 0px 20px;
+  padding: 10px 10px 10px 10px;
 }
