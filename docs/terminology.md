@@ -27,3 +27,5 @@
   Unfortunately this would require 17 dimensions to represent visually!
 
 - **Logistic regression** - A subcategory of linear regression where the desired output is categorical i.e. it belongs to a number of discrete catgories. In our case just two: pokemon 1 wins or pokemon 2 wins. This makes our problem a *binary classification* problem.
+
+- **Loss Function** - How the machine measures a model's accuracy during training. The loss function measures both how close its predictions were, but how varied they are. It values predictability highly and  would rather have a model that makes mediocre results which were slightly off, than a model that was sometimes totally right, and other times be wildly off.
