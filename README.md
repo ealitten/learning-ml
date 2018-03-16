@@ -19,7 +19,7 @@ Our team:
 
 ## Project Description
 
-We defined our initial project aim as: 
+We defined our initial project aim as:
 ```
 Making predictions using machine learning
 ```
@@ -77,7 +77,7 @@ Using the battle data and Pokemon attributes, predict the outcome of a battle wi
 - [Pandas](https://pandas.pydata.org) - Data structure library
 - [Django](https://www.djangoproject.com/) - Python web framework
 - [Google ML engine](https://cloud.google.com/ml-engine/) - Managed service to host custom machine learning model
-- [Heroku](https://www.heroku.com/) - Platform to deply our Django web app
+- [Heroku](https://www.heroku.com/) - Platform to deploy our Django web app
 
 
 ## Installation/Requirements
