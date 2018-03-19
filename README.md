@@ -70,6 +70,12 @@ Using the battle data and Pokemon attributes, predict the outcome of a battle wi
   - The user can select two pokemon to fight and see the predicted outcome
   - The user can see images of the pokemon, and see their stats before the battle
 
+## Screen shots
+
+![we predicted that](docs/images/homepage.png)
+
+![we predicted that](docs/images/results.png)
+
 ## Technologies / plaforms used
 
 - Python
