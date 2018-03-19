@@ -3,7 +3,7 @@
 <h2> We Predicted That </h2>
 <h3> Welcome to We Predicted That's machine learning excellence! </h3>
 
-  <a href='#introduction'>Introduction</a> |  <a href='#description'>Description</a>   |   <a href='#approach'>Approach</a> | <a href='#screenshots'>Screen Shots</a>  | <a href='#mvp'> MVP</a> |  <a href='#mvp'> Features</a> |  <a href='#tech'>Technologies </a> | <a href='#installation'>Installation </a> | <a href='https://medium.com/@wepredictedthat'> Blog </a>
+  <a href='#introduction'>Introduction</a> |  <a href='#description'>Description</a>   |   <a href='#approach'>Approach</a> | <a href='#screenshots'>Screen Shots</a>  | <a href='#mvp'> MVP</a> |  <a href='#mvp'> Features</a> |  <a href='#tech'>Technologies </a> | <a href='#installation'>Installation </a> |  <a href='https://www.youtube.com/watch?v=TXqf9PLbCds&feature=youtu.be'> Demo video </a> | <a href='https://medium.com/@wepredictedthat'> Blog </a> 
 
 
 ## Introduction  <a name= "introduction"></a>
@@ -51,7 +51,9 @@ Have a look at our [team blog](https://medium.com/@wepredictedthat) for the team
 
 #### Pick two Pokemon and see who will win
 
-![we predicted that](docs/images/homepage.png)
+<a href='https://www.youtube.com/watch?v=TXqf9PLbCds&feature=youtu.be'> Watch a demo video </a> 
+
+ ![we predicted that](docs/images/homepage.png) 
 
 ![we predicted that](docs/images/results.png)
 
