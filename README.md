@@ -3,7 +3,6 @@
 <h2> We Predicted That </h2>
 <h3> Welcome to We Predicted That's machine learning excellence! </h3>
 
-
   <a href='#introduction'>Introduction</a> |  <a href='#description'>Description</a>   |   <a href='#approach'>Approach</a> | <a href='#screenshots'>Screen Shots</a>  | <a href='#mvp'> MVP</a> |  <a href='#mvp'> Features</a> |  <a href='#tech'>Technologies </a> | <a href='#installation'>Installation </a> | <a href='https://medium.com/@wepredictedthat'> Blog </a>
 
 
@@ -19,7 +18,6 @@ Our team:
 - [Ed Goold](https://github.com/Gleoman)
 - [Dom Vernon](https://github.com/domvernon)
 
-
 ## Project Description <a name= "description"></a>
 
 We defined our initial project aim as:
@@ -30,6 +28,8 @@ Making predictions using machine learning
 Since we were all new to machine learning and data science, we started the project with a mini learning project: [predicting who survives the sinking of the Titanic](https://www.kaggle.com/c/titanic). This is a popular starting project for ML, and is a good introduction to the simpler ML algorithms. The challenge is a relatively straightforward binary classification problem - there are two outcomes: survived and died. We solved this using a logistic regression algorithm, using three columns from the Titanic dataset (`age`, `sex` and `passenger class`), achieving 80-82% accuracy of prediction. The titanic model and data can be found in the `titanic` folder.
 
 Once we had solved the titanic challenge, we chose a main project: using a dataset of pokemon attributes and battles to predict the winner in a battle between any two Pokemon. The [dataset](https://www.kaggle.com/terminus7/pokemon-challenge) was obtained from kaggle.
+
+Have a look at the [website](https://we-predicted-pokemon.herokuapp.com) and make as many guesses until your heart is content. (Please note the cloud can be slow to load so you may need to click the lets fight button and wait a sec when you first use it, but after that it will be great.)
 
 
 ## Approach <a name= "approach"></a>
