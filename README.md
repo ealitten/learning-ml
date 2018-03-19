@@ -1,13 +1,11 @@
 ![we predicted that](docs/images/wp_blue_200.png)
 
 <h2> We Predicted That </h2>
-<h3 align="center"> Welcome to We Predicted That's machine learning excellence! </h3>
+<h3> Welcome to We Predicted That's machine learning excellence! </h3>
+
 
   <a href='#introduction'>Introduction</a> |  <a href='#description'>Description</a>   |   <a href='#approach'>Approach</a> | <a href='#screenshots'>Screen Shots</a>  | <a href='#mvp'> MVP</a> |  <a href='#mvp'> Features</a> |  <a href='#tech'>Technologies </a> | <a href='#installation'>Installation </a> | <a href='https://medium.com/@wepredictedthat'> Blog </a>
 
-
-
-Welcome to We Predicted That's machine learning excellence!
 
 ## Introduction  <a name= "introduction"></a>
 
@@ -51,6 +49,8 @@ Have a look at our [team blog](https://medium.com/@wepredictedthat) for the team
 
 ## Screen shots <a name= "screenshots"></a>
 
+#### Pick two Pokemon and see who will win
+
 ![we predicted that](docs/images/homepage.png)
 
 ![we predicted that](docs/images/results.png)
@@ -92,7 +92,7 @@ Using the battle data and Pokemon attributes, predict the outcome of a battle wi
 - [Heroku](https://www.heroku.com/) - Platform to deploy our Django web app
 
 
-## Installation/Requirements <a name= "Installation"></a>
+## Installation/Requirements <a name= "installation"></a>
 
 - python 3.6
 
