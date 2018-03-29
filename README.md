@@ -47,7 +47,11 @@ Have a look at our [team blog](https://medium.com/@wepredictedthat) for the team
 
 
 
-## Screen shots <a name= "screenshots"></a>
+## Demo <a name= "screenshots"></a>
+
+The pokemon predictor webiste is hosted on Heroku at https://we-predicted-pokemon.herokuapp.com/
+
+N.B. On the free tier, Google ML engine nodes sleep after a few minutes without any requests. This means the first time you ask for a prediction, the node needs to be spun up and the response may be slow (~30s); however, subsequent requests should have more normal performance (<1 second).
 
 #### Pick two Pokemon and see who will win
 
